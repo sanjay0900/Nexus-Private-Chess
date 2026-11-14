@@ -588,11 +588,13 @@ filter: `room_code=eq.${game.room_code}`,
 
 },
 
-(p: any) => {
+(p) => {
 
-if (p.new?.room_code) {
+const payload = p.new as Partial<GameRow> | null;
 
-setGame(p.new as GameRow);
+if (payload?.room_code) {
+
+setGame(payload as GameRow);
 
 setSelected(null);
 
@@ -2056,7 +2058,17 @@ BUILT FOR TWO
 
 <div className="site-credit">
 
-<span>Built by</span> <strong>Sanjay Das</strong> <span>·</span> <span>@S4Sanjay_das</span>
+<span>Built by</span>{" "}
+<strong>Sanjay Das</strong>
+<span> · </span>
+<a
+  href="https://x.com/S4Sanjay_das"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Sanjay Das on X"
+>
+  @S4Sanjay_das
+</a>
 
 </div>
 
