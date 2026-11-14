@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { Chess } from 'chess.js';
+import { Chess, Square } from 'chess.js';
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
@@ -265,7 +265,7 @@ const turn = game?.turn || 'white';
 
 const legalMoves = useMemo(() => {
   if (!selected || !player || turn !== player) return [];
-  try { return chess.moves({ square: selected, verbose: true }) as any[]; } catch { return []; }
+  try { return chess.moves({ square: selected as Square, verbose: true }) as any[]; } catch { return []; }
 }, [chess, selected, player, turn]);
 
 const legalTargets = useMemo(() => new Set(legalMoves.map((move) => move.to)), [legalMoves]);
@@ -374,7 +374,7 @@ playerId: idRef.current,
 
 });
 
-const row = await res.json();
+const row = (await res.json()) as GameRow;
 
 setGame(row);
 
@@ -530,7 +530,7 @@ e.error || 'Room not found.'
 
 }
 
-const row = await res.json();
+const row = (await res.json()) as GameRow;
 
 setGame(row);
 
@@ -588,7 +588,7 @@ filter: `room_code=eq.${game.room_code}`,
 
 },
 
-(p) => {
+(p: any) => {
 
 if (p.new?.room_code) {
 
