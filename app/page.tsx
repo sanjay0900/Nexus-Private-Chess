@@ -2058,9 +2058,7 @@ BUILT FOR TWO
 
 <div className="site-credit">
 
-<span>Built by</span>{" "}
-<strong>Sanjay Das</strong>
-<span> · </span>
+<span>Built by</span> <strong>Sanjay Das</strong> <span>·</span>
 <a
   href="https://x.com/S4Sanjay_das"
   target="_blank"
