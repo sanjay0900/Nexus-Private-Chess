@@ -3378,3 +3378,153 @@ input:focus-visible {
     padding: 13px;
   }
 }
+
+
+/* --- Chess interaction polish --- */
+
+.board-column {
+  min-width: 0;
+}
+
+.board-frame {
+  width: min(100%, 760px);
+  margin-inline: auto;
+}
+
+.board {
+  position: relative;
+}
+
+.square {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.square.legal-move::after,
+.square.legal-capture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.square.legal-move::after {
+  width: 18%;
+  height: 18%;
+  inset: 41%;
+  border-radius: 50%;
+  background: rgba(38, 46, 35, 0.34);
+}
+
+.square.legal-capture::after {
+  inset: 11%;
+  border: 4px solid rgba(38, 46, 35, 0.36);
+  border-radius: 50%;
+}
+
+.legal-indicator {
+  display: none;
+}
+
+.square.last-move {
+  box-shadow: inset 0 0 0 999px rgba(223, 186, 76, 0.20);
+}
+
+.square.selected {
+  box-shadow: inset 0 0 0 4px rgba(64, 91, 69, 0.72);
+}
+
+.square.in-check {
+  box-shadow:
+    inset 0 0 0 4px rgba(165, 57, 45, 0.82),
+    inset 0 0 28px rgba(165, 57, 45, 0.28);
+}
+
+.captured-row {
+  display: flex;
+  align-items: center;
+  min-height: 16px;
+  margin-top: 3px;
+  gap: 0;
+  opacity: 0.72;
+}
+
+.captured-row span {
+  font-family: "Times New Roman", serif;
+  font-size: 14px;
+  line-height: 1;
+  margin-left: -2px;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.14));
+}
+
+.move-row {
+  display: grid !important;
+  grid-template-columns: 34px 1fr 1fr;
+  align-items: center;
+  gap: 10px;
+  min-height: 38px;
+}
+
+.move-row > span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.move-row strong {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.move-row .black-move {
+  color: var(--muted);
+}
+
+.status-card strong {
+  white-space: nowrap;
+}
+
+@media (max-width: 1000px) {
+  .board-frame {
+    width: min(100%, 680px);
+  }
+}
+
+@media (max-width: 760px) {
+  .board-frame {
+    width: 100%;
+  }
+
+  .move-row {
+    grid-template-columns: 28px 1fr 1fr;
+  }
+}
+
+
+/* Creator Credit */
+.site-credit {
+  width: 100%;
+  margin-top: 8px;
+  text-align: center;
+  color: #8b887f;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.site-credit strong {
+  color: #4a4944;
+  font-weight: 600;
+}
+
+.site-credit span {
+  opacity: 0.9;
+}
+
+@media (max-width: 760px) {
+  .site-credit {
+    margin-top: 6px;
+    font-size: 11px;
+  }
+}

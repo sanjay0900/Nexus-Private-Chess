@@ -2054,6 +2054,12 @@ BUILT FOR TWO
 
 </span>
 
+<div className="site-credit">
+
+<span>Built by</span> <strong>Sanjay Das</strong> <span>·</span> <span>@S4Sanjay_das</span>
+
+</div>
+
 </footer>
 
 </main>
