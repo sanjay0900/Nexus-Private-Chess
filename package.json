@@ -1,8 +1,25 @@
 {
-  "name":"private-multiplayer-chess-pro",
-  "version":"1.0.0",
-  "private":true,
-  "scripts":{"dev":"next dev","build":"next build","start":"next start","lint":"next lint"},
-  "dependencies":{"@supabase/supabase-js":"^2.81.1","chess.js":"^1.4.0","next":"^16.0.1","react":"^19.2.0","react-dom":"^19.2.0"},
-  "devDependencies":{"@types/node":"^22.10.1","@types/react":"^19.0.0","@types/react-dom":"^19.0.0","typescript":"^5.7.2"}
+  "name": "private-multiplayer-chess-pro",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.81.1",
+    "@vercel/analytics": "^2.0.1",
+    "chess.js": "^1.4.0",
+    "next": "^16.0.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.2"
+  }
 }
