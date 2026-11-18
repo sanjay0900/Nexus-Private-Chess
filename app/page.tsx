@@ -1122,6 +1122,16 @@ return (
     transition: box-shadow 180ms ease, transform 180ms ease, border-color 180ms ease;
   }
 
+  .creator-link {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 180ms ease;
+  }
+
+  .creator-link:hover {
+    opacity: 0.65;
+  }
+
   .player-bar.turn-pulse {
     animation: nexusTurnGlow 900ms ease-out;
   }
@@ -2414,7 +2424,7 @@ BUILT FOR TWO
 
 <div className="site-credit">
 
-<span>Built by</span> <strong>Sanjay Das</strong> <span>·</span> <span>@S4Sanjay_das</span>
+<span>Built by</span> <strong>Sanjay Das</strong> <span>·</span> <a href="https://x.com/S4Sanjay_das" target="_blank" rel="noopener noreferrer" className="creator-link">@S4Sanjay_das</a>
 
 </div>
 
